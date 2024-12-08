@@ -106,38 +106,30 @@ header h1 {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #020c1b;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    border-radius: 0 30px 30px 0;
     box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
 }
 
+.sidebar .nav-links {
+    margin-top: 80px;
+}
+
 .sidebar a {
-    padding: 12px 8px 12px 32px;
+    padding: 16px 32px;
     text-decoration: none;
     font-size: 18px;
     color: #B3B3B3;
     display: block;
-    transition: 0.3s;
-    margin: 8px 0;
-    border-radius: 0 50px 50px 0;
-    margin-right: 20px;
+    transition: all 0.3s ease;
+    width: 250px;
 }
 
 .sidebar a:hover {
     color: #FFFFFF;
     background: rgba(255, 255, 255, 0.1);
     padding-left: 40px;
-}
-
-.sidebar .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
 }
 
 /* Menu Button */
@@ -147,18 +139,20 @@ header h1 {
     position: fixed;
     left: 20px;
     top: 20px;
-    background: #282828;
     color: #FFFFFF;
     padding: 10px 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     z-index: 2;
+    background: none;
+    border: none;
 }
 
 .menu-btn:hover {
-    transform: scale(1.05);
-    background: #333333;
+    transform: scale(1.1);
+}
+
+.menu-btn.open {
+    font-size: 32px;
 }
 
 /* Main Content Transition */
@@ -203,4 +197,132 @@ header h1 {
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 .p-1 { padding: 1rem; }
-.p-2 { padding: 2rem; } 
+.p-2 { padding: 2rem; }
+
+/* Add these to your existing styles */
+.import-section {
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.import-section:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hide the default file input */
+#fileInput {
+    display: none;
+}
+
+/* Custom file input button */
+.file-upload-btn {
+    background: #FFFFFF;
+    color: #0A192F;
+    padding: 14px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.file-upload-btn:hover {
+    background: #E6E6E6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.import-section p {
+    color: #B3B3B3;
+    margin-top: 1rem;
+    font-size: 0.9em;
+}
+
+.data-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-item-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #B3B3B3;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+.import-date {
+    color: #B3B3B3;
+    font-size: 0.9em;
+}
+
+#fileInfo {
+    color: #B3B3B3;
+    font-style: italic;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.stat-card .track-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .artist-name {
+    color: #B3B3B3;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.stat-card .album-name {
+    color: #808080;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .timestamp {
+    color: #666666;
+    font-size: 0.9rem;
+    font-style: italic;
+} 

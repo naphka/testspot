@@ -3,18 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page 1</title>
+        <title>Listening Analysis</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
 <body>
-    <div id="main">
-        <div class="container">
-            <!-- Your page1 content here -->
-            <h1>Page 1</h1>
-            <p>This is the content of page 1.</p>
+    <button class="menu-btn">☰</button>
+    
+    <div class="sidebar">
+        <div class="nav-links">
+            <a href="index.html">Import</a>
+            <a href="page1.html">Analysis</a>
         </div>
     </div>
 
+    <div id="main">
+        <div class="container">
+            <div class="main-content">
+                <h2>Listening Analysis</h2>
+                <div class="chart-container">
+                    <canvas id="listeningChart"></canvas>
+                </div>
+                <div id="stats" class="stats-section">
+                    <!-- Statistics will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dataManager.js"></script>
+    <script src="js/listeningAnalytics.js"></script>
     <script src="js/sidebar.js"></script>
 </body>
 </html>

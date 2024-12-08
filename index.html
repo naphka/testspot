@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Data Import</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="main">
-        <header>
-            <div class="container">
-                <h1>Welcome to Our Website</h1>
-                <p>Discover amazing content and services</p>
-            </div>
-        </header>
+    <button class="menu-btn">☰</button>
+    
+    <div class="sidebar">
+        <div class="nav-links">
+            <a href="index.html">Import</a>
+            <a href="page1.html">Analysis</a>
+        </div>
+    </div>
 
+    <div id="main">
         <div class="container">
             <div class="main-content">
-                <h2>About Us</h2>
-                <p>Welcome to our platform! We're dedicated to providing you with the best experience possible. Our team works tirelessly to ensure that you get the most value from our services.</p>
-                
-                <h2>What We Offer</h2>
-                <ul>
-                    <li>High-quality products</li>
-                    <li>Expert customer service</li>
-                    <li>Innovative solutions</li>
-                    <li>24/7 support</li>
-                </ul>
+                <h2>Import Data</h2>
+                <div class="import-section">
+                    <input type="file" id="fileInput" accept=".json">
+                    <label for="fileInput" class="file-upload-btn">Choose File</label>
+                    <p>Drop your JSON file here or click to browse</p>
+                </div>
 
-                <a href="#" class="cta-button">Get Started</a>
+                <div id="dataList" class="mt-2">
+                    <!-- Imported data will be listed here -->
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="js/dataManager.js"></script>
+    <script src="js/fileHandler.js"></script>
     <script src="js/sidebar.js"></script>
 </body>
 </html>
