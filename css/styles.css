@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #121212;
+    background-color: #0A192F;
     color: #FFFFFF;
 }
 
@@ -32,7 +32,7 @@ p {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #404040, #282828);
+    background: linear-gradient(135deg, #172A45, #0A192F);
     padding: 3rem 0;
     margin-bottom: 2rem;
     color: white;
@@ -45,12 +45,12 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    color: #1DB954;
+    color: #FFFFFF;
 }
 
 /* Main Content */
 .main-content {
-    background-color: #282828;
+    background-color: #172A45;
     padding: 3rem;
     border-radius: 24px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -60,7 +60,7 @@ header h1 {
 .main-content h2 {
     color: #FFFFFF;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #1DB954;
+    border-bottom: 2px solid #FFFFFF;
     padding-bottom: 0.5rem;
 }
 
@@ -87,15 +87,15 @@ header h1 {
 }
 
 .cta-button {
-    background: #1DB954;
-    color: white;
-    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+    background: #FFFFFF;
+    color: #0A192F;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 .cta-button:hover {
-    background: #1ed760;
+    background: #E6E6E6;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Sidebar Navigation */
@@ -164,7 +164,7 @@ header h1 {
 /* Main Content Transition */
 #main {
     transition: margin-left .5s;
-    background-color: #121212;
+    background-color: #0A192F;
     min-height: 100vh;
     position: relative;
 }
