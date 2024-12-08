@@ -1,0 +1,206 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #404040, #282828);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    color: #1DB954;
+}
+
+/* Main Content */
+.main-content {
+    background-color: #282828;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+
+.main-content h2 {
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #1DB954;
+    padding-bottom: 0.5rem;
+}
+
+.main-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-content li {
+    margin-bottom: 0.5rem;
+    color: #B3B3B3;
+}
+
+/* Buttons */
+.btn, .cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button {
+    background: #1DB954;
+    color: white;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+}
+
+.cta-button:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 0 30px 30px 0;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a {
+    padding: 12px 8px 12px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #B3B3B3;
+    display: block;
+    transition: 0.3s;
+    margin: 8px 0;
+    border-radius: 0 50px 50px 0;
+    margin-right: 20px;
+}
+
+.sidebar a:hover {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 40px;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Menu Button */
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    background: #282828;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    background: #333333;
+}
+
+/* Main Content Transition */
+#main {
+    transition: margin-left .5s;
+    background-color: #121212;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    header {
+        padding: 2rem 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .sidebar {
+        padding-top: 40px;
+    }
+    
+    .sidebar a {
+        font-size: 16px;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; } 
