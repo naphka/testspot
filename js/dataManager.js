@@ -3,7 +3,7 @@ class DataManager {
         this.dbName = 'SpotifyHistoryDB';
         this.dbVersion = 1;
         this.storeName = 'listeningHistory';
-        this.db = null; // Store database connection
+        this.db = null;
         this.initDatabase();
     }
 
@@ -20,13 +20,6 @@ class DataManager {
             request.onsuccess = (event) => {
                 console.log('Database opened successfully');
                 this.db = event.target.result;
-                
-                // Firefox-specific: Handle connection losses
-                this.db.onversionchange = () => {
-                    this.db.close();
-                    alert('Database is outdated, please reload the page.');
-                };
-                
                 resolve(this.db);
             };
 
@@ -55,12 +48,20 @@ class DataManager {
                 const store = transaction.objectStore(this.storeName);
                 const request = store.getAll();
 
-                transaction.oncomplete = () => {
-                    console.log('Retrieved files:', request.result);
-                    resolve(request.result);
+                request.onsuccess = () => {
+                    const files = request.result.map(file => ({
+                        id: file.id,
+                        data: {
+                            name: file.name,
+                            content: file.content,
+                            timestamp: file.timestamp
+                        }
+                    }));
+                    console.log('Retrieved files:', files);
+                    resolve(files);
                 };
 
-                transaction.onerror = (event) => {
+                request.onerror = (event) => {
                     console.error('Error getting files:', event.target.error);
                     reject(event.target.error);
                 };
@@ -79,20 +80,22 @@ class DataManager {
                 const transaction = db.transaction([this.storeName], 'readwrite');
                 const store = transaction.objectStore(this.storeName);
                 
-                // Ensure timestamp is present
+                // Structure the data correctly
                 const dataToSave = {
-                    ...fileData,
+                    name: fileData.name,
+                    content: fileData.content,
                     timestamp: fileData.timestamp || new Date().toISOString()
                 };
                 
+                console.log('Structured data to save:', dataToSave);
                 const request = store.add(dataToSave);
                 
-                transaction.oncomplete = () => {
+                request.onsuccess = () => {
                     console.log('File saved successfully');
                     resolve(request.result);
                 };
 
-                transaction.onerror = (event) => {
+                request.onerror = (event) => {
                     console.error('Error saving file:', event.target.error);
                     reject(event.target.error);
                 };
@@ -112,12 +115,12 @@ class DataManager {
                 const store = transaction.objectStore(this.storeName);
                 const request = store.delete(id);
 
-                transaction.oncomplete = () => {
+                request.onsuccess = () => {
                     console.log('File deleted successfully');
                     resolve();
                 };
 
-                transaction.onerror = (event) => {
+                request.onerror = (event) => {
                     console.error('Error deleting file:', event.target.error);
                     reject(event.target.error);
                 };
@@ -137,12 +140,12 @@ class DataManager {
                 const store = transaction.objectStore(this.storeName);
                 const request = store.clear();
 
-                transaction.oncomplete = () => {
+                request.onsuccess = () => {
                     console.log('All data cleared successfully');
                     resolve();
                 };
 
-                transaction.onerror = (event) => {
+                request.onerror = (event) => {
                     console.error('Error clearing data:', event.target.error);
                     reject(event.target.error);
                 };
